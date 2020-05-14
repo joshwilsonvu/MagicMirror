@@ -1,0 +1,47 @@
+{
+  "name": "magicmirror",
+  "version": "1.0.0",
+  "description": "The open source modular smart mirror platform.",
+  "author": "Josh Wilson",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "modules/*",
+    "!modules/default",
+    "modules/default/*"
+  ],
+  "scripts": {
+    "start": "mm start",
+    "build": "mm build",
+    "serve": "mm serve --port 8080",
+    "view": "mm view http://localhost:8080",
+    "bg-start": "mm bg start",
+    "bg-stop": "mm bg stop",
+    "mm-dev": "yarn link ../mm --all && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshwilsonvu/MagicMirror.git"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror"
+  ],
+  "contributors": [
+    "https://github.com/joshwilsonvu/MagicMirror/graphs/contributors"
+  ],
+  "homepage": "https://magicmirror.builders",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@mm/babel-plugin-transform-config": "*",
+    "@mm/babel-plugin-transform-mm2": "*",
+    "@mm/cli": "*",
+    "@mm/mm2": "*",
+    "immer": "^6.0.3",
+    "nanoid": "^3.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "roboto-fontface": "^0.10.0",
+    "typescript": "^3.8.3"
+  }
+}
