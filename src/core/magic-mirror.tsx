@@ -2,7 +2,7 @@
  * This component implements the MagicMirror
  */
 
-import React, { lazy, Suspense, useReducer } from 'react';
+import React, { lazy, useReducer } from 'react';
 import { nanoid } from 'nanoid';
 import path from 'path';
 import { NotificationProvider } from '@mm/utils';
@@ -64,19 +64,19 @@ function MMInit({ children, config }) {
   };
 };
 
-const WrapModule = ({ module }) => {
-  const { Component, hidden, speed, identifier, name, classes, header, config, path, file } = module;
-  let timeout = typeof speed === 'number' ? speed : 1000;
-  const props = { name, path, file, identifier, classNames: classes, header, config, hidden };
-  // add CSSTransition here to apply key and make it a direct child of TransitionGroup
-  return (
-    /*<FadeTransition speed={speed} pose={hidden && "hidden"}>*/
-    <Suspense fallback={<div>...</div>}>
-      <Component {...props} duration={timeout} />
-    </Suspense>
-    /*</FadeTransition>*/
-  );
-};
+// const WrapModule = ({ module }) => {
+//   const { Component, hidden, speed, identifier, name, classes, header, config, path, file } = module;
+//   let timeout = typeof speed === 'number' ? speed : 1000;
+//   const props = { name, path, file, identifier, classNames: classes, header, config, hidden };
+//   // add CSSTransition here to apply key and make it a direct child of TransitionGroup
+//   return (
+//     /*<FadeTransition speed={speed} pose={hidden && "hidden"}>*/
+//     <Suspense fallback={<div>...</div>}>
+//       <Component {...props} duration={timeout} />
+//     </Suspense>
+//     /*</FadeTransition>*/
+//   );
+// };
 
 
 function MMLayout({ modules }) {
