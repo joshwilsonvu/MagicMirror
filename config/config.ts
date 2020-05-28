@@ -1,4 +1,5 @@
-import type Config from "../src/core/config-type";
+import { Config } from "../src/core/types";
+
 /* Magic Mirror Config Sample
  *
  * By Michael Teeuw http://michaelteeuw.nl
@@ -8,13 +9,13 @@ import type Config from "../src/core/config-type";
  * See https://github.com/MichMich/MagicMirror#configuration
  *
  */
-
 const config: Config = {
 	port: 8080,
 	ipWhitelist: [],
 	language: "en",
 	timeFormat: 24,
 	units: "metric",
+	useHttps: false,
 	// serverOnly:  true/false/"local" ,
 			     // local for armv6l processors, default
 			     //   starts serveronly and then starts chrome browser
@@ -22,6 +23,13 @@ const config: Config = {
 			     // true, force serveronly mode, because you want to.. no UI on this device
 
 	modules: [
+		{
+			module: "helloworld",
+			position: "top_left",
+			config: {
+				text: "hello world"
+			}
+		}
 		// {
 		// 	module: "alert",
 		// 	disabled: true

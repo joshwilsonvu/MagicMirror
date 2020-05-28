@@ -17,7 +17,7 @@
     "view": "mm view http://localhost:8080",
     "bg-start": "mm bg start",
     "bg-stop": "mm bg stop",
-    "mm-dev": "yarn link ../mm --all && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
+    "mm-dev": "yarn link ../mm --all --relative && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
   },
   "repository": {
     "type": "git",
@@ -37,11 +37,21 @@
     "@mm/babel-plugin-transform-mm2": "*",
     "@mm/cli": "*",
     "@mm/mm2": "*",
+    "@mm/utils": "*",
     "immer": "^6.0.3",
     "nanoid": "^3.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "roboto-fontface": "^0.10.0",
-    "typescript": "^3.8.3"
+    "roboto-fontface": "^0.10.0"
+  },
+  "resolutions": {
+    "@mm/babel-plugin-transform-config": "portal:../../packages/babel-plugin-transform-config",
+    "@mm/babel-plugin-transform-mm2": "portal:../../packages/babel-plugin-transform-mm2",
+    "@mm/cli": "portal:../../packages/cli",
+    "@mm/hooks": "portal:../../packages/hooks",
+    "@mm/mm2": "portal:../../packages/mm2",
+    "@mm/node-helper": "portal:../../packages/node-helper",
+    "@mm/utils": "portal:../../packages/utils",
+    "@mm/moduleslist": "portal:../../packages/moduleslist"
   }
 }

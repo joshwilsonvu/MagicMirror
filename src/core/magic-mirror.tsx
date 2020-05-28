@@ -6,7 +6,7 @@ import React, { lazy, Suspense, useReducer } from 'react';
 import { nanoid } from 'nanoid';
 import path from 'path';
 import { NotificationProvider } from '@mm/utils';
-import type * as Types from './types';
+import * as Types from './types';
 
 function MMReducer(state, { type, ...payload }) {
   switch (type) {
