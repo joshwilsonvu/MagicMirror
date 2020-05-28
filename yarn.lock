@@ -1459,10 +1459,10 @@ __metadata:
     browserslist: ^4.12.0
     case-sensitive-paths-webpack-plugin: ^2.3.0
     chalk: ^3.0.0
+    confusing-browser-globals: ^1.0.9
     css-loader: ^3.5.2
     electron: ^9.0.0
     eslint: ^6.8.0
-    eslint-config-react-app: ^5.2.1
     eslint-loader: ^4.0.0
     eslint-plugin-flowtype: ^4.7.0
     eslint-plugin-import: ^2.20.2
@@ -4952,25 +4952,6 @@ __metadata:
   version: 1.0.5
   resolution: "escape-string-regexp@npm:1.0.5"
   checksum: 3/f9484b8b4c8827d816e0fd905c25ed4b561376a9c220e1430403ea84619bf680c76a883a48cff8b8e091daf55d6a497e37479f9787b9f15f3c421b6054289744
-  languageName: node
-  linkType: hard
-
-"eslint-config-react-app@npm:^5.2.1":
-  version: 5.2.1
-  resolution: "eslint-config-react-app@npm:5.2.1"
-  dependencies:
-    confusing-browser-globals: ^1.0.9
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": 2.x
-    "@typescript-eslint/parser": 2.x
-    babel-eslint: 10.x
-    eslint: 6.x
-    eslint-plugin-flowtype: 3.x || 4.x
-    eslint-plugin-import: 2.x
-    eslint-plugin-jsx-a11y: 6.x
-    eslint-plugin-react: 7.x
-    eslint-plugin-react-hooks: 1.x || 2.x
-  checksum: 3/bb6028338a4c233568c2f9249fce0e464edbe68079bee63fedbd9c9398d534bf6e6c19d312021916198ec75e9bdce1ddb1e5a11f191ea9887a610b782b8741b9
   languageName: node
   linkType: hard
 

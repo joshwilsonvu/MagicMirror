@@ -1,0 +1,2 @@
+# Prevents eslint files higher in the directory tree from conflicting with this project
+root: true
