@@ -51,6 +51,10 @@
     "@mm/hooks": "portal:../../packages/hooks",
     "@mm/mm2": "portal:../../packages/mm2",
     "@mm/node-helper": "portal:../../packages/node-helper",
-    "@mm/moduleslist": "portal:../../packages/moduleslist"
+    "@mm/moduleslist": "portal:../../packages/moduleslist",
+    "@mm/components": "portal:../../packages/components"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.6"
   }
 }

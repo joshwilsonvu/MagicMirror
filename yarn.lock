@@ -1777,7 +1777,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.0.5":
+"@types/node@npm:^14.0.5, @types/node@npm:^14.0.6":
   version: 14.0.6
   resolution: "@types/node@npm:14.0.6"
   checksum: 3/14c184ce392941d016aa94479eca2d33517756a9e48d0b03ba6e258128b513dc28dc524f85cc0591e12be9d804beff6aadc4b3159555c6ffdd1d1ab8f46d41da
@@ -7499,6 +7499,7 @@ fsevents@~2.1.2:
     "@mm/cli": "*"
     "@mm/hooks": "*"
     "@mm/mm2": "*"
+    "@types/node": ^14.0.6
     immer: ^6.0.3
     nanoid: ^3.0.2
     react: ^16.13.1
