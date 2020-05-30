@@ -36,8 +36,8 @@
     "@mm/babel-plugin-transform-config": "*",
     "@mm/babel-plugin-transform-mm2": "*",
     "@mm/cli": "*",
+    "@mm/hooks": "*",
     "@mm/mm2": "*",
-    "@mm/utils": "*",
     "immer": "^6.0.3",
     "nanoid": "^3.0.2",
     "react": "^16.13.1",
@@ -51,7 +51,6 @@
     "@mm/hooks": "portal:../../packages/hooks",
     "@mm/mm2": "portal:../../packages/mm2",
     "@mm/node-helper": "portal:../../packages/node-helper",
-    "@mm/utils": "portal:../../packages/utils",
     "@mm/moduleslist": "portal:../../packages/moduleslist"
   }
 }

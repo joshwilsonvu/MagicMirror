@@ -5,7 +5,7 @@
 import React, { lazy, useReducer } from 'react';
 import { nanoid } from 'nanoid';
 import path from 'path';
-import { NotificationProvider } from '@mm/utils';
+import { NotificationProvider } from '@mm/hooks';
 import * as Types from './types';
 
 function MMReducer(state, { type, ...payload }) {
