@@ -33,28 +33,32 @@
   "homepage": "https://magicmirror.builders",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "@mm/babel-plugin-transform-config": "*",
+    "@mm/babel-plugin-transform-config": "^0.1.0",
     "@mm/babel-plugin-transform-mm2": "*",
     "@mm/cli": "*",
+    "@mm/components": "*",
     "@mm/hooks": "*",
     "@mm/mm2": "*",
     "immer": "^6.0.3",
     "nanoid": "^3.0.2",
+    "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "roboto-fontface": "^0.10.0"
-  },
-  "resolutions": {
-    "@mm/babel-plugin-transform-config": "portal:../../packages/babel-plugin-transform-config",
-    "@mm/babel-plugin-transform-mm2": "portal:../../packages/babel-plugin-transform-mm2",
-    "@mm/cli": "portal:../../packages/cli",
-    "@mm/hooks": "portal:../../packages/hooks",
-    "@mm/mm2": "portal:../../packages/mm2",
-    "@mm/node-helper": "portal:../../packages/node-helper",
-    "@mm/moduleslist": "portal:../../packages/moduleslist",
-    "@mm/components": "portal:../../packages/components"
+    "roboto-fontface": "^0.10.0",
+    "typescript": "^3.9.3"
   },
   "devDependencies": {
-    "@types/node": "^14.0.6"
+    "@types/node": "^14.0.6",
+    "@types/react": "^16.9.35"
+  },
+  "resolutions": {
+    "@mm/babel-plugin-transform-config": "portal:../mm/packages/babel-plugin-transform-config",
+    "@mm/babel-plugin-transform-mm2": "portal:../mm/packages/babel-plugin-transform-mm2",
+    "@mm/cli": "portal:../mm/packages/cli",
+    "@mm/components": "portal:../mm/packages/components",
+    "@mm/hooks": "portal:../mm/packages/hooks",
+    "@mm/mm2": "portal:../mm/packages/mm2",
+    "@mm/moduleslist": "portal:../mm/packages/moduleslist",
+    "@mm/node-helper": "portal:../mm/packages/node-helper"
   }
 }

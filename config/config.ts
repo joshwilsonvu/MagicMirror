@@ -16,16 +16,11 @@ const config: Config = {
 	timeFormat: 24,
 	units: "metric",
 	useHttps: false,
-	// serverOnly:  true/false/"local" ,
-			     // local for armv6l processors, default
-			     //   starts serveronly and then starts chrome browser
-			     // false, default for all  NON-armv6l devices
-			     // true, force serveronly mode, because you want to.. no UI on this device
-
 	modules: [
 		{
-			module: "helloworld",
+			module: "text",
 			position: "top_left",
+			header: "header",
 			config: {
 				text: "hello world"
 			}

@@ -8,9 +8,18 @@ import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import 'roboto-fontface/css/roboto-condensed/roboto-condensed-fontface.css';
 import './main.css';
 
-ReactDOM.render(
-  <StrictMode>
-    <MagicMirror config={config}/>
-  </StrictMode>,
-  document.getElementById('root'),
-);
+function render() {
+  console.log("Rendering");
+  ReactDOM.render(
+    <StrictMode>
+      <MagicMirror initialConfig={config}/>
+    </StrictMode>,
+    document.getElementById('root'),
+  );
+}
+
+render();
+
+if (module.hot) {
+  module.hot.accept(["./core", "../config/config"], render);
+}

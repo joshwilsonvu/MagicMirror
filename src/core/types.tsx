@@ -1,4 +1,6 @@
 import React from "react";
+import path from "path";
+import { nanoid } from "nanoid";
 
 /**
  * A module may appear in any of these positions on screen.
@@ -11,19 +13,32 @@ export type ModulePosition = 'none' | 'top_bar' | 'top_left' | 'top_center' | 't
  * Options for each module. While only `module` is strictly required, some modules
  * may also require `position` and/or `config`.
  */
-export interface ConfigForModule {
+export type ModuleConfig = {
   module: string;
   position?: ModulePosition;
   classes?: string[];
   header?: string;
   config?: Record<string, any>;
   disabled?: boolean;
+  // Note: the rest of these properties are automatically added but won't be typechecked
+  _component?: React.ComponentType<ComponentProps>;
+  _path?: string; // the relative path from config file to module file
 }
+
+export type InternalModuleConfig = ModuleConfig & {
+  hidden: boolean;
+  identifier: string;
+  file: string; // the module file
+  path: string; // the directory containing the module file
+};
+
+export type ComponentProps = Omit<InternalModuleConfig, "header" | "classes" | "_component">;
+
 
 /**
  * Options for MagicMirror.
  */
-export interface Config {
+export type Config = {
   port?: number;
   address?: string;
   ipWhitelist?: string[];
@@ -32,52 +47,43 @@ export interface Config {
   timeFormat?: 12 | 24;
   units?: "metric" | "imperial";
   useHttps?: boolean;
+  // if useHttps is true but either of the next two properties are undefined, they will be generated
   httpsPrivateKey?: string;
   httpsCertificate?: string;
-  modules?: ConfigForModule[];
+  modules?: ModuleConfig[];
   electronOptions?: BrowserWindowConstructorOptions;
+  // Note: the rest of these properties are automatically added but won't be typechecked
+  __dirname?: string; // the location of the config file
 }
 
-export type ModuleState = {
-  hidden: boolean,
-  disabled: boolean,
-  identifier: string,
-  config: object,
-  classes: string[],
-  file: string,
-  path: string,
-  header: string,
-  position: ModulePosition,
-  Component: React.ComponentType<ModuleProps>
+export type InternalConfig = Omit<Config, "modules"> & {
+  modules: InternalModuleConfig[];
 }
 
-export type ModuleProps = ReturnType<typeof filterStateForProps>
-function filterStateForProps(state: ModuleState) {
-  const { Component, disabled, ...props } = state;
-  return props;
+export function initializeConfig({modules, ...rest}: Config): InternalConfig {
+  return {
+    ...rest,
+    modules: modules.map(initializeModule),
+  }
 }
 
-export type BakedModuleProps = ReturnType<typeof filterStateForBakedComponentProps>
-function filterStateForBakedComponentProps({ identifier, file, path, position }: ModuleState) {
-  return { identifier, file, path, position };
+export function initializeModule(mod: ModuleConfig): InternalModuleConfig {
+  if (!mod._path || !mod._component) {
+    throw new Error(`Babel loader not working for module ${mod.module}: ${JSON.stringify(mod)}.`);
+  }
+  const f = path.basename(mod._path), p = path.dirname(mod._path);
+  return {
+    ...mod,
+    hidden: false,
+    identifier: `m${nanoid(10)}`,
+    file: f,
+    path: p
+  }
 }
-export type DynamicModuleProps = {
-  [P in Exclude<keyof ModuleProps, keyof BakedModuleProps>]: ModuleProps[P];
-}
 
 
 
-export type AdditionalModuleProps = {
 
-
-}
-
-export function componentize(state: ModuleState) {
-  const bakedProps = filterStateForBakedComponentProps(state);
-  return (props: DynamicModuleProps) => (
-    <state.Component {...bakedProps} {...props} />
-  );
-}
 
 // type ModuleCompat = ReturnType<typeof filterPropsForCompat>;
 // export function filterPropsForCompat({ hidden, identifier, config, classes, file, path, header, position }: ModuleProps) {
