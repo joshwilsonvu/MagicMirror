@@ -37,8 +37,10 @@
     "@mm/babel-plugin-transform-mm2": "*",
     "@mm/cli": "*",
     "@mm/components": "*",
+    "@mm/core": "*",
     "@mm/hooks": "*",
     "@mm/mm2": "*",
+    "@mm/node-helper": "^0.0.1",
     "immer": "^6.0.3",
     "nanoid": "^3.0.2",
     "path": "^0.12.7",
@@ -59,6 +61,7 @@
     "@mm/hooks": "portal:../mm/packages/hooks",
     "@mm/mm2": "portal:../mm/packages/mm2",
     "@mm/moduleslist": "portal:../mm/packages/moduleslist",
-    "@mm/node-helper": "portal:../mm/packages/node-helper"
+    "@mm/node-helper": "portal:../mm/packages/node-helper",
+    "@mm/core": "portal:../mm/packages/core"
   }
 }

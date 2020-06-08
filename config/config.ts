@@ -1,4 +1,4 @@
-import { Config } from "../src/core/types";
+import { Config } from "@mm/core";
 
 /* Magic Mirror Config Sample
  *
@@ -20,10 +20,15 @@ const config: Config = {
 		{
 			module: "text",
 			position: "top_left",
-			header: "header",
+			header: "Text",
 			config: {
 				text: "hello world"
 			}
+		},
+		{
+			module: "mm2",
+			position: "top_right",
+			disabled: false,
 		}
 		// {
 		// 	module: "alert",
@@ -37,7 +42,7 @@ const config: Config = {
 		// {
 		// 	module: "clock",
 		// 	position: "top_left",
-		// 	disabled: false
+		// 	disabled: true
 		// },
 		// {
 		// 	module: "text",
