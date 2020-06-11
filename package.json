@@ -13,8 +13,8 @@
   "scripts": {
     "start": "mm start",
     "build": "mm build",
-    "serve": "mm serve --port 8080",
-    "view": "mm view http://localhost:8080",
+    "serve": "mm serve",
+    "view": "mm view",
     "bg-start": "mm bg start",
     "bg-stop": "mm bg stop",
     "mm-dev": "yarn link ../mm --all --relative && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
@@ -33,12 +33,8 @@
   "homepage": "https://magicmirror.builders",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "@mm/babel-plugin-transform-config": "^0.1.0",
-    "@mm/babel-plugin-transform-mm2": "*",
     "@mm/cli": "*",
-    "@mm/components": "*",
     "@mm/core": "*",
-    "@mm/hooks": "*",
     "@mm/mm2": "*",
     "@mm/node-helper": "^0.0.1",
     "immer": "^6.0.3",
@@ -57,11 +53,9 @@
     "@mm/babel-plugin-transform-config": "portal:../mm/packages/babel-plugin-transform-config",
     "@mm/babel-plugin-transform-mm2": "portal:../mm/packages/babel-plugin-transform-mm2",
     "@mm/cli": "portal:../mm/packages/cli",
-    "@mm/components": "portal:../mm/packages/components",
-    "@mm/hooks": "portal:../mm/packages/hooks",
+    "@mm/core": "portal:../mm/packages/core",
     "@mm/mm2": "portal:../mm/packages/mm2",
     "@mm/moduleslist": "portal:../mm/packages/moduleslist",
-    "@mm/node-helper": "portal:../mm/packages/node-helper",
-    "@mm/core": "portal:../mm/packages/core"
+    "@mm/node-helper": "portal:../mm/packages/node-helper"
   }
 }

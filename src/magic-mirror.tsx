@@ -2,10 +2,8 @@
  * This component implements the MagicMirror
  */
 
-import React, { Suspense } from 'react';
-import { NotificationProvider, useMemoArray } from '@mm/hooks';
-import { ModuleGuard, ModuleLayout } from '@mm/components';
-import * as Types from '@mm/core';
+import React from 'react';
+import * as Core from '@mm/core';
 
 // Use like modifyConfig(hideModule(id, true))
 // const MM = {
@@ -24,9 +22,9 @@ import * as Types from '@mm/core';
  * can efficiently determine which properties have changed and rerender the
  * module components with the updated properties.
  */
-function useModulesFromConfig(dynamicConfig: Types.InternalConfig) {
+function useModulesFromConfig(dynamicConfig: Core.InternalConfig) {
   // same input, same output for each element of the array
-  const modules = useMemoArray(dynamicConfig.modules, (m: Types.InternalModuleConfig) => {
+  const modules = Core.useMemoArray(dynamicConfig.modules, (m: Core.InternalModuleConfig) => {
     return (
       <MagicMirrorModule {...m} key={m.identifier}/>
     )
@@ -34,34 +32,34 @@ function useModulesFromConfig(dynamicConfig: Types.InternalConfig) {
   return modules;
 }
 
-function MagicMirrorModule({ _component: Component, ...props }: Types.InternalModuleConfig) {
+function MagicMirrorModule({ _component: Component, ...props }: Core.InternalModuleConfig) {
   return props.disabled ? null : (
-    <ModuleGuard name={Component.name}>
-      <Suspense fallback={
-        <div style={{ width: "100%", height: "100%", backgroundColor: "#933" }}/>
-      }>
-        <div className={["module", Component.name, ...(props.classes || [])].join(" ")} id={props.identifier}>
-          {props.header && <header className="module-header">{props.header}</header>}
-          <div className="module-content">
-            <Component {...props} />
-          </div>
+    <Core.ModuleGuard name={Component.name}>
+      <div className={["module", Component.name, ...(props.classes || [])].join(" ")} id={props.identifier}>
+        {props.header && <header className="module-header">{props.header}</header>}
+        <div className="module-content">
+          <Component {...props} />
         </div>
-      </Suspense>
-    </ModuleGuard>
+      </div>
+    </Core.ModuleGuard>
   );
 };
 
-function MagicMirror({ initialConfig }: { initialConfig: Types.Config }) {
+function MagicMirror({ initialConfig }: { initialConfig: Core.Config }) {
   // initialConfig is only initial arg, the component will copy it and manage the copy
-  const [config, setConfig] = React.useState(() => Types.initializeConfig(initialConfig));
+  const [config, setConfig] = React.useState(() => Core.initializeConfig(initialConfig));
 
   const modules = useModulesFromConfig(config);
   return (
-    <NotificationProvider>
-      <ModuleLayout>
-        {modules}
-      </ModuleLayout>
-    </NotificationProvider>
+    <React.StrictMode>
+      <Core.NotificationProvider>
+        <Core.ConfigProvider config={config} setConfig={setConfig}>
+          <Core.ModuleLayout>
+            {modules}
+          </Core.ModuleLayout>
+        </Core.ConfigProvider>
+      </Core.NotificationProvider>
+    </React.StrictMode>
   );
 }
 
