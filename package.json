@@ -36,7 +36,7 @@
     "@mm/cli": "*",
     "@mm/core": "*",
     "@mm/mm2": "*",
-    "@mm/node-helper": "^0.0.1",
+    "@mm/node-helper": "*",
     "immer": "^6.0.3",
     "nanoid": "^3.0.2",
     "path": "^0.12.7",

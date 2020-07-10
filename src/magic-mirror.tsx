@@ -22,15 +22,6 @@ import * as Core from '@mm/core';
  * can efficiently determine which properties have changed and rerender the
  * module components with the updated properties.
  */
-function useModulesFromConfig(dynamicConfig: Core.InternalConfig) {
-  // same input, same output for each element of the array
-  const modules = Core.useMemoArray(dynamicConfig.modules, (m: Core.InternalModuleConfig) => {
-    return (
-      <MagicMirrorModule {...m} key={m.identifier}/>
-    )
-  }, []);
-  return modules;
-}
 
 function MagicMirrorModule({ _component: Component, ...props }: Core.InternalModuleConfig) {
   return props.disabled ? null : (
@@ -47,20 +38,19 @@ function MagicMirrorModule({ _component: Component, ...props }: Core.InternalMod
 
 function MagicMirror({ initialConfig }: { initialConfig: Core.Config }) {
   // initialConfig is only initial arg, the component will copy it and manage the copy
-  const [config, setConfig] = React.useState(() => Core.initializeConfig(initialConfig));
+  Core.useInitializeConfig(() => Core.initializeConfigClient(initialConfig));
+  const config = Core.useCurrentConfig();
 
-  const modules = useModulesFromConfig(config);
   return (
     <React.StrictMode>
-      <Core.NotificationProvider>
-        <Core.ConfigProvider config={config} setConfig={setConfig}>
-          <Core.ModuleLayout>
-            {modules}
-          </Core.ModuleLayout>
-        </Core.ConfigProvider>
-      </Core.NotificationProvider>
+      <Core.ModuleLayout>
+        {config.modules.map((m) => (
+          <MagicMirrorModule {...m} key={m.identifier} />
+        ))}
+      </Core.ModuleLayout>
     </React.StrictMode>
   );
 }
 
 export default MagicMirror;
+

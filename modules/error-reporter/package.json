@@ -1,0 +1,9 @@
+{
+  "name": "error-reporter",
+  "dependencies": {
+    "@mm/core": "latest",
+    "@mm/node-helper": "latest",
+    "react": "*"
+  },
+  "main": "index.ts"
+}

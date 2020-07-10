@@ -1,0 +1,7 @@
+{
+  "name": "calendar",
+  "dependencies": {
+    "@mm/node-helper": "^0.0.1",
+    "valid-url": "^1.0.9"
+  }
+}

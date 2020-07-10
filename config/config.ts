@@ -10,12 +10,12 @@ import { Config } from "@mm/core";
  *
  */
 const config: Config = {
+	address: "127.0.0.1",
 	port: 8080,
-	ipWhitelist: [],
+	ipAllowlist: [],
 	language: "en",
 	timeFormat: 24,
 	units: "metric",
-	useHttps: false,
 	modules: [
 		{
 			module: "text",
@@ -26,10 +26,13 @@ const config: Config = {
 			}
 		},
 		{
-			module: "mm2",
-			position: "top_right",
-			disabled: false,
-		}
+			module: "error-reporter",
+		},
+		// {
+		// 	module: "mm2",
+		// 	header: "MM2 Module",
+		// 	position: "top_right",
+		// },
 		// {
 		// 	module: "alert",
 		// 	disabled: true
@@ -59,14 +62,15 @@ const config: Config = {
 		// 	module: "calendar",
 		// 	header: "US Holidays",
 		// 	position: "top_left",
+		// 	disabled: true,
 		// 	config: {
 		// 		calendars: [
 		// 			{
 		// 				symbol: "calendar-check",
-		// 				url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"					}
+		// 				url: "webcal://www.calendarlabs.com/ical-calendar/ics/76/US_Holidays.ics"
+		// 			}
 		// 		]
 		// 	},
-		// 	disabled: true
 		// },
 		// {
 		// 	module: "compliments",
