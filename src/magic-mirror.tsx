@@ -3,7 +3,8 @@
  */
 
 import React from 'react';
-import * as Core from '@mm/core';
+import { useCurrentConfig, useInitializeConfig, initializeConfigClient, ModuleLayout, ModuleGuard } from '@mm/core';
+import type { Config, InternalModuleConfig } from "@mm/core";
 
 // Use like modifyConfig(hideModule(id, true))
 // const MM = {
@@ -23,31 +24,31 @@ import * as Core from '@mm/core';
  * module components with the updated properties.
  */
 
-function MagicMirrorModule({ _component: Component, ...props }: Core.InternalModuleConfig) {
+function MagicMirrorModule({ _component: Component, ...props }: InternalModuleConfig) {
   return props.disabled ? null : (
-    <Core.ModuleGuard name={Component.name}>
+    <ModuleGuard name={Component.name}>
       <div className={["module", Component.name, ...(props.classes || [])].join(" ")} id={props.identifier}>
         {props.header && <header className="module-header">{props.header}</header>}
         <div className="module-content">
           <Component {...props} />
         </div>
       </div>
-    </Core.ModuleGuard>
+    </ModuleGuard>
   );
 };
 
-function MagicMirror({ initialConfig }: { initialConfig: Core.Config }) {
+function MagicMirror({ initialConfig }: { initialConfig: Config }) {
   // initialConfig is only initial arg, the component will copy it and manage the copy
-  Core.useInitializeConfig(() => Core.initializeConfigClient(initialConfig));
-  const config = Core.useCurrentConfig();
+  useInitializeConfig(() => initializeConfigClient(initialConfig));
+  const config = useCurrentConfig();
 
   return (
     <React.StrictMode>
-      <Core.ModuleLayout>
+      <ModuleLayout>
         {config.modules.map((m) => (
           <MagicMirrorModule {...m} key={m.identifier} />
         ))}
-      </Core.ModuleLayout>
+      </ModuleLayout>
     </React.StrictMode>
   );
 }

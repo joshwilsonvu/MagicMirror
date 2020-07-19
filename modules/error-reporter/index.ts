@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { sendSocketNotification, Props } from "@mm/core";
 
-
 export default function ErrorReporter({ name }: Props) {
   const emit = sendSocketNotification(name);
   useEffect(() => {
@@ -17,6 +16,6 @@ export default function ErrorReporter({ name }: Props) {
     }
     window.addEventListener("error", reporter);
     return () => window.removeEventListener("error", reporter);
-  }, [sendSocketNotification]);
+  }, [emit]);
   return null;
 }

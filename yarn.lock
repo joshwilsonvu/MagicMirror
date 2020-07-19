@@ -1857,6 +1857,7 @@ __metadata:
     browserslist: ^4.12.0
     case-sensitive-paths-webpack-plugin: ^2.3.0
     chalk: ^4.1.0
+    clear: ^0.1.0
     clipanion: ^2.4.2
     confusing-browser-globals: ^1.0.9
     consola: ^2.13.0
@@ -1877,6 +1878,7 @@ __metadata:
     fs-extra: ^9.0.1
     helmet: ^3.23.1
     html-webpack-plugin: ^4.3.0
+    memfs: ^3.2.0
     mitt: ^1.2.0
     morgan: ^1.10.0
     pem: ^1.14.4
@@ -1941,6 +1943,7 @@ __metadata:
   resolution: "@mm/mm2@portal:../mm/packages/mm2::locator=magicmirror%40workspace%3A."
   dependencies:
     "@fortawesome/fontawesome-free": ^5.13.1
+    "@mm/babel-plugin-transform-mm2": "workspace:*"
     "@mm/core": "workspace:*"
     "@testing-library/jest-dom": ^5.10.1
     "@testing-library/react": ^10.3.0
@@ -4201,6 +4204,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clear@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "clear@npm:0.1.0"
+  checksum: 3/5bb327928ac437961b25b51c8ab637b9c6dd74e53ff1d76928c71900f27ef8774da778da81b6cc7d9aba3467da508be9bbd4968a347ba6467761643111d34948
+  languageName: node
+  linkType: hard
+
 "cli-cursor@npm:^3.1.0":
   version: 3.1.0
   resolution: "cli-cursor@npm:3.1.0"
@@ -6399,6 +6409,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-monkey@npm:1.0.1":
+  version: 1.0.1
+  resolution: "fs-monkey@npm:1.0.1"
+  checksum: 3/2ecb8ef5896fc66a5d6fbb9af6e1f9c5723b46ff46cbd91c815262c405318dad8cb6f1bbb36d9c63ec257131731fbdfa433683bc1fea34b4be17b07e64c826cc
+  languageName: node
+  linkType: hard
+
 "fs-write-stream-atomic@npm:^1.0.8":
   version: 1.0.10
   resolution: "fs-write-stream-atomic@npm:1.0.10"
@@ -8208,6 +8225,15 @@ fsevents@~2.1.2:
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
   checksum: 3/be1c825782df7f38eebd451d778f6407bb15a59c8807a69e7f2ad74a25440e474536441c6bf583fdf2803ea23b866e91ff68f565cda297211dd89147758c8df3
+  languageName: node
+  linkType: hard
+
+"memfs@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "memfs@npm:3.2.0"
+  dependencies:
+    fs-monkey: 1.0.1
+  checksum: 3/48bf758246937c6ceadaecc31e81050d4745dac5e031e3080961c28311bcc4b29e99f9cc4110103a0cb9f004c30c59926eaf15d10f4ac9a00b773b256a918ae2
   languageName: node
   linkType: hard
 
