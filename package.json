@@ -50,12 +50,12 @@
     "@types/react": "^16.9.35"
   },
   "resolutions": {
-    "@mm/babel-plugin-transform-config": "portal:../mm/packages/babel-plugin-transform-config",
-    "@mm/babel-plugin-transform-mm2": "portal:../mm/packages/babel-plugin-transform-mm2",
-    "@mm/cli": "portal:../mm/packages/cli",
-    "@mm/core": "portal:../mm/packages/core",
-    "@mm/mm2": "portal:../mm/packages/mm2",
-    "@mm/moduleslist": "portal:../mm/packages/moduleslist",
-    "@mm/node-helper": "portal:../mm/packages/node-helper"
+    "@mm/babel-plugin-transform-config": "portal:../../packages/babel-plugin-transform-config",
+    "@mm/babel-plugin-transform-mm2": "portal:../../packages/babel-plugin-transform-mm2",
+    "@mm/cli": "portal:../../packages/cli",
+    "@mm/core": "portal:../../packages/core",
+    "@mm/mm2": "portal:../../packages/mm2",
+    "@mm/moduleslist": "portal:../../packages/moduleslist",
+    "@mm/node-helper": "portal:../../packages/node-helper"
   }
 }

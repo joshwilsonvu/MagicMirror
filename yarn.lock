@@ -1811,9 +1811,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mm/babel-plugin-transform-config@portal:../mm/packages/babel-plugin-transform-config::locator=magicmirror%40workspace%3A.":
+"@mm/babel-plugin-transform-config@portal:../../packages/babel-plugin-transform-config::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/babel-plugin-transform-config@portal:../mm/packages/babel-plugin-transform-config::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/babel-plugin-transform-config@portal:../../packages/babel-plugin-transform-config::locator=magicmirror%40workspace%3A."
   dependencies:
     "@babel/core": ^7.10.3
     "@babel/plugin-syntax-dynamic-import": ^7.8.3
@@ -1829,18 +1829,18 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@mm/babel-plugin-transform-mm2@portal:../mm/packages/babel-plugin-transform-mm2::locator=magicmirror%40workspace%3A.":
+"@mm/babel-plugin-transform-mm2@portal:../../packages/babel-plugin-transform-mm2::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/babel-plugin-transform-mm2@portal:../mm/packages/babel-plugin-transform-mm2::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/babel-plugin-transform-mm2@portal:../../packages/babel-plugin-transform-mm2::locator=magicmirror%40workspace%3A."
   dependencies:
     "@babel/core": ^7.10.3
     babel-plugin-tester: ^9.2.0
   languageName: node
   linkType: soft
 
-"@mm/cli@portal:../mm/packages/cli::locator=magicmirror%40workspace%3A.":
+"@mm/cli@portal:../../packages/cli::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/cli@portal:../mm/packages/cli::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/cli@portal:../../packages/cli::locator=magicmirror%40workspace%3A."
   dependencies:
     "@babel/core": ^7.10.3
     "@babel/plugin-transform-modules-commonjs": ^7.10.1
@@ -1909,11 +1909,10 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@mm/core@portal:../mm/packages/core::locator=magicmirror%40workspace%3A.":
+"@mm/core@portal:../../packages/core::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/core@portal:../mm/packages/core::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/core@portal:../../packages/core::locator=magicmirror%40workspace%3A."
   dependencies:
-    "@testing-library/dom": ^7.16.2
     "@testing-library/react-hooks": ^3.3.0
     "@types/node": ^14.0.13
     "@types/react": ^16.9.38
@@ -1932,15 +1931,22 @@ __metadata:
     tslib: ^2.0.0
     typescript: ^3.9.5
     use-constant: ^1.0.0
+    wait-for-expect: ^3.0.2
   peerDependencies:
     "@types/react": ">=16.9.35"
     "@types/react-query": ^1.1.2
+    react: ^16.13.1
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-query":
+      optional: true
   languageName: node
   linkType: soft
 
-"@mm/mm2@portal:../mm/packages/mm2::locator=magicmirror%40workspace%3A.":
+"@mm/mm2@portal:../../packages/mm2::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/mm2@portal:../mm/packages/mm2::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/mm2@portal:../../packages/mm2::locator=magicmirror%40workspace%3A."
   dependencies:
     "@fortawesome/fontawesome-free": ^5.13.1
     "@mm/babel-plugin-transform-mm2": "workspace:*"
@@ -1967,9 +1973,9 @@ __metadata:
   languageName: node
   linkType: soft
 
-"@mm/node-helper@portal:../mm/packages/node-helper::locator=magicmirror%40workspace%3A.":
+"@mm/node-helper@portal:../../packages/node-helper::locator=magicmirror%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "@mm/node-helper@portal:../mm/packages/node-helper::locator=magicmirror%40workspace%3A."
+  resolution: "@mm/node-helper@portal:../../packages/node-helper::locator=magicmirror%40workspace%3A."
   dependencies:
     "@mm/core": "workspace:*"
     "@types/express": ^4.17.6
@@ -2025,7 +2031,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^7.14.2, @testing-library/dom@npm:^7.16.2":
+"@testing-library/dom@npm:^7.14.2":
   version: 7.16.2
   resolution: "@testing-library/dom@npm:7.16.2"
   dependencies:
@@ -12498,6 +12504,13 @@ typescript@^3.9.5:
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
   checksum: 3/fc571a62d2cf797ae8773ebb3cb0d2bea50ed02059e128dd9087975929fce4c80a6485ce1aaf7d44ef69db99dfdcde50b6be5d5eb73b296660d761c32fb544fe
+  languageName: node
+  linkType: hard
+
+"wait-for-expect@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "wait-for-expect@npm:3.0.2"
+  checksum: 3/487de701ccb29f9edc2fb2d77b3212c29266266156cd13f51b34556faa1061151f078b7200763c684553fcd67823084cd5f871a965d2b6cce97e3b9224b63bdb
   languageName: node
   linkType: hard
 
