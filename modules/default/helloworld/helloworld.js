@@ -1,20 +1,29 @@
 /* Magic Mirror
  * Module: HelloWorld
  *
- * By Michael Teeuw https://michaelteeuw.nl
+ * By Josh Wilson
  * MIT Licensed.
  */
-Module.register("helloworld", {
-	// Default module config.
-	defaults: {
-		text: "Hello World!"
-	},
-
-	getTemplate: function () {
-		return "helloworld.njk";
-	},
-
-	getTemplateData: function () {
-		return this.config;
+import React from "react";
+import { assignDefaults } from "@mm/core";
+/**
+ *
+ * @param {*} props
+ */
+export default function HelloWorld(props) {
+	const config = assignDefaults(props.config, defaults);
+  if (config.escapeHtml) {
+		return (
+			<div>{config.text}</div>
+		)
+	} else {
+		return (
+			<div dangerouslySetInnerHTML={{ __html: config.text }} />
+		)
 	}
-});
+}
+
+const defaults = {
+	text: "Hello World!",
+	escapeHtml: false
+}

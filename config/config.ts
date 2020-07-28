@@ -28,6 +28,10 @@ const config: Config = {
 		{
 			module: "error-reporter",
 		},
+		{
+			module: "calendar",
+			disabled: false
+		}
 		// {
 		// 	module: "mm2",
 		// 	header: "MM2 Module",
@@ -78,7 +82,6 @@ const config: Config = {
 		// 	disabled: true
 		// },
 	],
-
 };
 export default config;
 

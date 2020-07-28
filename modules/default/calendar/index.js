@@ -1,46 +1,22 @@
 import "./calendar.css";
-import { useFetchText } from "@mm/core";
+import { useFetchText, assignDefaults, useQuery } from "@mm/core";
+import { initializeCalendar } from "./functions";
 import ical from "ical";
 
-export default Calendar;
+export default function Calendar(props) {
+	let { name, config } = props;
+	config = { ...defaults, ...config };
 
-function Calendar(props) {
-  const { name, config } = props;
-  console.log("Starting module:", name);
-
-  const calendars = config.calendars.map(calendar => {
-    calendar.url = calendar.url.replace("webcal://", "http://");
-    const calendarConfig = {
-      maximumEntries: calendar.maximumEntries,
-      maximumNumberOfDays: calendar.maximumNumberOfDays,
-      broadcastPastEvents: calendar.broadcastPastEvents
-    };
-    if (calendar.symbolClass === "undefined" || calendar.symbolClass === null) {
-      calendarConfig.symbolClass = "";
-    }
-    if (calendar.titleClass === "undefined" || calendar.titleClass === null) {
-      calendarConfig.titleClass = "";
-    }
-    if (calendar.timeClass === "undefined" || calendar.timeClass === null) {
-      calendarConfig.timeClass = "";
-    }
-
-    // we check user and password here for backwards compatibility with old configs
-    if (calendar.user && calendar.pass) {
-      console.warn("Deprecation warning: Please update your calendar authentication configuration.");
-      console.warn("https://github.com/MichMich/MagicMirror/tree/v2.1.2/modules/default/calendar#calendar-authentication-options");
-      calendar.headers = { Authorization: `Basic ${atob(calendar.user + ":" + calendar.pass)}` }
-    }
-  });
-
+  const calendars = config.calendars.map(({ }) => 0);
+	const icals = useFetchText(calendars, config.fetchInterval);
 }
 
 function Fader(props) {
-  const { items } = props;
+  const { items, fade, fadePoint } = props;
 
 }
 
-calendar.defaults = {
+const defaults = {
   maximumEntries: 10, // Total Maximum Entries
   maximumNumberOfDays: 365,
   displaySymbol: true,
@@ -397,94 +373,14 @@ const CalendarFetcher = function (url, reloadInterval, excludedEvents, maximumNu
 		});
 	};
 
-	/* scheduleTimer()
-	 * Schedule the timer for the next update.
-	 */
-	const scheduleTimer = function () {
-		clearTimeout(reloadTimer);
-		reloadTimer = setTimeout(function () {
-			fetchCalendar();
-		}, reloadInterval);
-	};
 
-	/* isFullDayEvent(event)
-	 * Checks if an event is a fullday event.
-	 *
-	 * argument event object - The event object to check.
-	 *
-	 * return bool - The event is a fullday event.
-	 */
-	const isFullDayEvent = function (event) {
-		if (event.start.length === 8 || event.start.dateOnly) {
-			return true;
-		}
 
-		const start = event.start || 0;
-		const startDate = new Date(start);
-		const end = event.end || 0;
-		if ((end - start) % (24 * 60 * 60 * 1000) === 0 && startDate.getHours() === 0 && startDate.getMinutes() === 0) {
-			// Is 24 hours, and starts on the middle of the night.
-			return true;
-		}
 
-		return false;
-	};
 
-	/* timeFilterApplies()
-	 * Determines if the user defined time filter should apply
-	 *
-	 * argument now Date - Date object using previously created object for consistency
-	 * argument endDate Moment - Moment object representing the event end date
-	 * argument filter string - The time to subtract from the end date to determine if an event should be shown
-	 *
-	 * return bool - The event should be filtered out
-	 */
-	const timeFilterApplies = function (now, endDate, filter) {
-		if (filter) {
-			const until = filter.split(" "),
-				value = parseInt(until[0]),
-				increment = until[1].slice(-1) === "s" ? until[1] : until[1] + "s", // Massage the data for moment js
-				filterUntil = moment(endDate.format()).subtract(value, increment);
 
-			return now < filterUntil.format("x");
-		}
 
-		return false;
-	};
 
-	/* getTitleFromEvent(event)
-	 * Gets the title from the event.
-	 *
-	 * argument event object - The event object to check.
-	 *
-	 * return string - The title of the event, or "Event" if no title is found.
-	 */
-	const getTitleFromEvent = function (event) {
-		let title = "Event";
-		if (event.summary) {
-			title = typeof event.summary.val !== "undefined" ? event.summary.val : event.summary;
-		} else if (event.description) {
-			title = event.description;
-		}
 
-		return title;
-	};
-
-	const testTitleByFilter = function (title, filter, useRegex, regexFlags) {
-		if (useRegex) {
-			// Assume if leading slash, there is also trailing slash
-			if (filter[0] === "/") {
-				// Strip leading and trailing slashes
-				filter = filter.substr(1).slice(0, -1);
-			}
-
-			filter = new RegExp(filter, regexFlags);
-
-			return filter.test(title);
-		} else {
-			return title.includes(filter);
-		}
-	};
 
 	/* public methods */
 

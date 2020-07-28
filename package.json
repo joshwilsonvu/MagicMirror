@@ -15,8 +15,7 @@
     "build": "mm build",
     "serve": "mm serve",
     "view": "mm view",
-    "bg-start": "mm bg start",
-    "bg-stop": "mm bg stop",
+    "check": "mm check",
     "mm-dev": "yarn link ../mm --all --relative && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
   },
   "repository": {
