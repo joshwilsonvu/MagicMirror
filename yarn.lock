@@ -1729,6 +1729,7 @@ __metadata:
     "@babel/register": ^7.10.3
     "@mm/babel-plugin-transform-config": "workspace:*"
     "@mm/babel-plugin-transform-mm2": "workspace:*"
+    "@mm/core": "workspace:*"
     "@typescript-eslint/eslint-plugin": ^3.4.0
     "@typescript-eslint/parser": ^3.4.0
     babel-eslint: ^10.1.0
@@ -1743,6 +1744,7 @@ __metadata:
     confusing-browser-globals: ^1.0.9
     consola: ^2.13.0
     css-loader: ^3.6.0
+    dotenv: ^8.2.0
     electron: ^9.0.5
     eslint: ^7.3.0
     eslint-loader: ^4.0.2
@@ -3825,7 +3827,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "calendar@workspace:modules/default/calendar"
   dependencies:
-    "@mm/node-helper": ^0.0.1
+    "@mm/core": latest
+    "@mm/node-helper": latest
     valid-url: ^1.0.9
   languageName: unknown
   linkType: soft
@@ -5118,6 +5121,13 @@ __metadata:
     no-case: ^3.0.3
     tslib: ^1.10.0
   checksum: 31e5037039fb696ed7f1da1d3f0cea5fa0ffe0523334229a2f241856411fbbb59a5a7a6f8ae1447820718797708650bd6f90836d510ec27a81694fbc006c946a
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.2.0
+  resolution: "dotenv@npm:8.2.0"
+  checksum: 16cb89cbd7b98b053899b8aba8c5044c8fb61a2db8a81fe70360b75035fce5fed53bd7a34d772be717d0880c0321122a4c09423f518025e1b52d96791521b1a7
   languageName: node
   linkType: hard
 
