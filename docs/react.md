@@ -169,6 +169,8 @@ ReactDOM.render(
 > Here's the official [React docs](https://reactjs.org/docs/components-and-props.html)
 > page on components and props.
 
+---
+
 By now, you've learned how to render markup with React, and you're ready
 to start your first MagicMirror module (which is just a component!). Run
 `yarn mm init --help` from the command line to get started.
@@ -387,8 +389,8 @@ function MyComponent() {
 }
 ```
 
-Don't worry too much about remembering this; running `mm start` with the
-`--check` flag analyzes your code and warns you if you are breaking the
+Don't worry too much about remembering this; running `mm start`, `build`,
+or `check` analyzes your code and warns you if you are breaking the
 Rules of Hooks.
 
 > The official [React docs](https://reactjs.org/docs/hooks-rules.html)

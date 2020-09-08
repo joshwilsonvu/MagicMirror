@@ -10,7 +10,7 @@ import {
   ModuleLayout,
   ModuleGuard,
 } from "@mm/core";
-import type { Config, InternalModuleConfig } from "@mm/core";
+import { Config, InternalModuleConfig } from "@mm/core";
 
 // Use like modifyConfig(hideModule(id, true))
 // const MM = {

@@ -1730,6 +1730,7 @@ __metadata:
     "@mm/babel-plugin-transform-config": "workspace:*"
     "@mm/babel-plugin-transform-mm2": "workspace:*"
     "@mm/core": "workspace:*"
+    "@mm/moduleslist": "workspace:*"
     "@typescript-eslint/eslint-plugin": ^3.4.0
     "@typescript-eslint/parser": ^3.4.0
     babel-eslint: ^10.1.0
@@ -1742,7 +1743,6 @@ __metadata:
     clear: ^0.1.0
     clipanion: ^2.4.2
     confusing-browser-globals: ^1.0.9
-    consola: ^2.13.0
     css-loader: ^3.6.0
     dotenv: ^8.2.0
     electron: ^9.0.5
@@ -1761,9 +1761,11 @@ __metadata:
     fs-extra: ^9.0.1
     helmet: ^3.23.1
     html-webpack-plugin: ^4.3.0
+    log-symbols: ^4.0.0
     memfs: ^3.2.0
     mitt: ^1.2.0
     morgan: ^1.10.0
+    pascal-case: ^3.1.1
     pem: ^1.14.4
     pnp-webpack-plugin: ^1.6.4
     postcss-flexbugs-fixes: ^4.2.1
@@ -1771,6 +1773,7 @@ __metadata:
     postcss-normalize: ^8.0.0
     postcss-preset-env: ^6.7.0
     pretty-error: ^2.1.1
+    prompts: ^2.3
     react-dev-utils: ^10.2.1
     resolve: ^1.17.0
     resolve-url-loader: ^3.1.1
@@ -1782,11 +1785,11 @@ __metadata:
     ts-loader: ^7.0.5
     ts-pnp: ^1.2.0
     typescript: ^3.9.7
-    webpack: ^4.43.0
+    webpack: ^4.44.1
     webpack-bundle-analyzer: ^3.8.0
     webpack-dev-middleware: ^3.7.2
     webpack-hot-middleware: ^2.25.0
-    yargs: ^15.3.1
+    yargs: ^15.4.1
   bin:
     mm: lib/index.js
   languageName: node
@@ -1805,13 +1808,13 @@ __metadata:
     fast-memoize: ^2.5.2
     immer: ^7.0.4
     mitt: ^1.2.0
-    nanoid: ^3.1.10
+    nanoid: ^3.1.12
     react: ^16.13.1
-    react-query: ^2.0.2
+    react-query: ^2.12.1
     react-test-renderer: ^16.13.1
     socket.io: ^2.3.0
     socket.io-client: ^2.3.0
-    tslib: ^2.0.0
+    tslib: ^2.0.1
     typescript: ^3.9.7
     use-constant: ^1.0.0
     wait-for-expect: ^3.0.2
@@ -1841,18 +1844,28 @@ __metadata:
     "@types/react": ^16.9.38
     "@types/socket.io-client": ^1.4.33
     moment-timezone: ^0.5.31
-    nunjucks: ^3.2.1
+    nunjucks: ^3.2.2
     path: ^0.12.7
     react: ^16.13.1
     react-dom: ^16.13.1
     socket.io-client: ^2.3.0
     suncalc: ^1.8.0
-    tslib: ^2.0.0
+    tslib: ^2.0.1
     typescript: ^3.9.7
     use-constant: ^1.0.0
     weathericons: ^2.1.0
   peerDependencies:
     react: ^16.12.0
+  languageName: node
+  linkType: soft
+
+"@mm/moduleslist@portal:../mm/packages/moduleslist::locator=magicmirror%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "@mm/moduleslist@portal:../mm/packages/moduleslist::locator=magicmirror%40workspace%3A."
+  dependencies:
+    fs-extra: ^9.0.1
+    is-github-url: ^1.2.2
+    yaml: ^1.10.0
   languageName: node
   linkType: soft
 
@@ -1867,7 +1880,7 @@ __metadata:
     express: ^4.17.1
     mitt: ^1.2.0
     socket.io: ^2.3.0
-    tslib: ^2.0.0
+    tslib: ^2.0.1
     typescript: ^3.9.7
   peerDependencies:
     express: ^4.17.1
@@ -4237,17 +4250,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "commander@npm:3.0.2"
-  checksum: 28071a49d23606c1e31f1f275d2aac9c03833cb3442e04b798ffbcd5f7fb7a1fbfc6b5bc6a69b862df83f475378665623788118d189c254a173248c452bd77a2
-  languageName: node
-  linkType: hard
-
 "commander@npm:^4.1.1":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
   checksum: 448585071bf8fb4c0bf9dd52abaee43dea086f801334caec2c8e8c9f456f8abc224c1614ccbbdbf7da5ac2524d230f13cf1fc86c233cf8a041ebecea7df106e9
+  languageName: node
+  linkType: hard
+
+"commander@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "commander@npm:5.1.0"
+  checksum: d16141ea7f580945156fb8a06de2834c4647c7d9d3732ebd4534ab8e0b7c64747db301e18f2b840f28ea8fef51f7a8d6178e674b45a21931f0b65ff1c7f476b3
   languageName: node
   linkType: hard
 
@@ -4328,13 +4341,6 @@ __metadata:
   version: 1.0.9
   resolution: "confusing-browser-globals@npm:1.0.9"
   checksum: 319e6d15384745d3ff4a5ca0357b687e0d36a1ab29a03084e192ea12802532de0fa7319169b09e971aba6a291f8a5ca333105e0fb239ed3f6c891f13eea2bea6
-  languageName: node
-  linkType: hard
-
-"consola@npm:^2.13.0":
-  version: 2.14.0
-  resolution: "consola@npm:2.14.0"
-  checksum: e0ad8ef5b1c26a23e10ec779fb4530bfffb36b106f7c251ac0fc19f2e2967c370ade6396abe55721d9bbb2bd0094753974d4542d964c6e88638a28a4fff3f900
   languageName: node
   linkType: hard
 
@@ -7037,13 +7043,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"immer@npm:^6.0.3":
-  version: 6.0.5
-  resolution: "immer@npm:6.0.5"
-  checksum: 9d62879a3c734b3340a76d3d15ece884c833172c2a6826bb43d9ed3876f67cd649444c51ff8a05b8a2a6c472582568af025e5ab652b6bc01a9b200573554e6b0
-  languageName: node
-  linkType: hard
-
 "immer@npm:^7.0.4":
   version: 7.0.7
   resolution: "immer@npm:7.0.7"
@@ -7392,6 +7391,13 @@ fsevents@~2.1.2:
   version: 3.0.0
   resolution: "is-fullwidth-code-point@npm:3.0.0"
   checksum: a01a19ecac34386ae3a4e801c5639d6e31082d1ddc418e7cd96317fef3c8b24ec8531558e9d3d35b33551ab9c5cf20bf2cdefa583927b7ff60c27c8d7c216063
+  languageName: node
+  linkType: hard
+
+"is-github-url@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "is-github-url@npm:1.2.2"
+  checksum: 46af03936767f51d7f9c526b2f4a58d968059a9e4beeea7ee96a739749f33b646555af0db768fbed4887eaee1dacc35ee8f9a0e029be9c43690b12e556d58ddf
   languageName: node
   linkType: hard
 
@@ -7806,6 +7812,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"kleur@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "kleur@npm:3.0.3"
+  checksum: 20ef0e37fb3f9aebbec8a75b61f547051aa61e3a6c51bd2678e77a11d69d73885a76966aea77f09c40677c7dfa274a5e16741ec89859213c9f798d4a96f77521
+  languageName: node
+  linkType: hard
+
 "language-subtag-registry@npm:~0.3.2":
   version: 0.3.20
   resolution: "language-subtag-registry@npm:0.3.20"
@@ -7997,6 +8010,15 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"log-symbols@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "log-symbols@npm:4.0.0"
+  dependencies:
+    chalk: ^4.0.0
+  checksum: 2cbdb0427d1853f2bd36645bff42aaca200902284f28aadacb3c0fa4c8c43fe6bfb71b5d61ab08b67063d066d7c55b8bf5fbb43b03e4a150dbcdd643e9cd1dbf
+  languageName: node
+  linkType: hard
+
 "loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
@@ -8051,9 +8073,6 @@ fsevents@~2.1.2:
     "@mm/node-helper": "*"
     "@types/node": ^14.0.6
     "@types/react": ^16.9.35
-    immer: ^6.0.3
-    nanoid: ^3.0.2
-    path: ^0.12.7
     react: ^16.13.1
     react-dom: ^16.13.1
     roboto-fontface: ^0.10.0
@@ -8391,6 +8410,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"mmm-newmodule@workspace:modules/MMM-NewModule":
+  version: 0.0.0-use.local
+  resolution: "mmm-newmodule@workspace:modules/MMM-NewModule"
+  dependencies:
+    "@mm/core": "*"
+    "@mm/node-helper": "*"
+    react: ">=16.8"
+  languageName: unknown
+  linkType: soft
+
 "moment-timezone@npm:^0.5.31":
   version: 0.5.31
   resolution: "moment-timezone@npm:0.5.31"
@@ -8471,19 +8500,12 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.0.2":
-  version: 3.0.2
-  resolution: "nanoid@npm:3.0.2"
-  checksum: 11ee983f1f8c643706054643e630a5abf45e08ff3b7cbbe7ebb4a1d3711ae979e90a2f966f574bb245d276c31ca10eaf150d8325a2b7625bd695272cf1f89d11
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.1.10":
-  version: 3.1.11
-  resolution: "nanoid@npm:3.1.11"
+"nanoid@npm:^3.1.12":
+  version: 3.1.12
+  resolution: "nanoid@npm:3.1.12"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: b8585bdbc896aaede907b98ef5d15756b10e83dadf0c81aecd8043173a2acd032958c164f59c568739bb7cdf41d88f975aaef71976eb0b6d5a7300f35a1f4eae
+  checksum: dc51417babadca4b00c2126ac0bc1c01e842e3c40edda2d3e1da40e8aae4d691a2a0b9d8e9c3a8cdb16133345a47f9135f0d0eef85a66ad31711ad3d908050e4
   languageName: node
   linkType: hard
 
@@ -8785,20 +8807,20 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nunjucks@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "nunjucks@npm:3.2.1"
+"nunjucks@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "nunjucks@npm:3.2.2"
   dependencies:
     a-sync-waterfall: ^1.0.0
     asap: ^2.0.3
     chokidar: ^3.3.0
-    commander: ^3.0.2
+    commander: ^5.1.0
   dependenciesMeta:
     chokidar:
       optional: true
   bin:
-    nunjucks-precompile: ./bin/precompile
-  checksum: 3464729ae3b261e4961233f61e02229b38f0eb14ff60455e06e3c0cb89711c15fb370d7f241d9d70ada7049876e3765e5b577661e24a2b3fe4d4d6f27be44c2f
+    nunjucks-precompile: bin/precompile
+  checksum: ad7ac5ab621d30375ae8bd5e2f1fa4c87e652079179b63a8dc6d0fdb483ab283ba042f38675553a56db606a1accec19c1aade37b2e437520ab4e398b5f1dfbdd
   languageName: node
   linkType: hard
 
@@ -10041,6 +10063,16 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"prompts@npm:^2.3":
+  version: 2.3.2
+  resolution: "prompts@npm:2.3.2"
+  dependencies:
+    kleur: ^3.0.3
+    sisteransi: ^1.0.4
+  checksum: a910ba767eb61bfba15d8ef602fb50eb3f99809790e078941833c59f549557f1edd6dcdf8c749568379c2f2babe930bd3b87755fea639ad516fa1a1974e0fe7b
+  languageName: node
+  linkType: hard
+
 "prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.7.2
   resolution: "prop-types@npm:15.7.2"
@@ -10299,14 +10331,12 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react-query@npm:^2.0.2":
-  version: 2.5.6
-  resolution: "react-query@npm:2.5.6"
-  dependencies:
-    ts-toolbelt: ^6.9.4
+"react-query@npm:^2.12.1":
+  version: 2.12.1
+  resolution: "react-query@npm:2.12.1"
   peerDependencies:
     react: ^16.8.0
-  checksum: b4053519bd61fd136574ef246e0f42ef291a6cbeadd3560ce8cdb09407be840eccb7d7b9c55d02916ea9ced88e0596c6fa6225d728b30db647565740b3b48dfb
+  checksum: d4a3e73b7bfa03efc2f23bb036884e057b222d4acf915baaa0c53dd99b7e664030f75d14ffbebf5849d63ff88e90dbc6c668566379ab0b2357ffea0e72d8ed98
   languageName: node
   linkType: hard
 
@@ -10324,7 +10354,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react@npm:*, react@npm:^16.13.1":
+"react@npm:*, react@npm:>=16.8, react@npm:^16.13.1":
   version: 16.13.1
   resolution: "react@npm:16.13.1"
   dependencies:
@@ -11134,6 +11164,13 @@ resolve@^1.3.2:
   version: 3.0.3
   resolution: "signal-exit@npm:3.0.3"
   checksum: f8f3fec95c8d1f9ad7e3cce07e1195f84e7a85cdcb4e825e8a2b76aa5406a039083d2bc9662b3cf40e6948262f41277047d20e6fbd58c77edced0b18fab647d8
+  languageName: node
+  linkType: hard
+
+"sisteransi@npm:^1.0.4":
+  version: 1.0.5
+  resolution: "sisteransi@npm:1.0.5"
+  checksum: 6554debe10fa4c6a7e8d58531313fdb61c39bb435ba420f8d7a01d8aaffecc654cca846b586e33f3c904350e24f229d5bbd8069abdb583c93252849a0f73e933
   languageName: node
   linkType: hard
 
@@ -11968,13 +12005,6 @@ resolve@^1.3.2:
   languageName: node
   linkType: hard
 
-"ts-toolbelt@npm:^6.9.4":
-  version: 6.9.9
-  resolution: "ts-toolbelt@npm:6.9.9"
-  checksum: f10cbc6fac6b7b13dcfe3522d67526d1eecfee3b96ad974ea54a7d29b25f324136c142ff8aaf03d8375d34c8017b0ba6b233ece9a09d3af037677f02a3f51d18
-  languageName: node
-  linkType: hard
-
 "tsconfig-paths@npm:^3.9.0":
   version: 3.9.0
   resolution: "tsconfig-paths@npm:3.9.0"
@@ -11994,10 +12024,10 @@ resolve@^1.3.2:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "tslib@npm:2.0.0"
-  checksum: a7369a224f12e223fb42f2a720389601a24a1e1c96c55bf0d8d4b60c131e574c175ae23578b8d1bd3f4ec790c7e0a82b43733f022f866d48a23aeadd3910755d
+"tslib@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "tslib@npm:2.0.1"
+  checksum: 7b42337a07f536c9650c72471cdf51317f07eb981692e91b8979fee3f6e20136a8f047e6ecdc5f2f3201132a6cc4e0096fa3c58655eba3803bf7fe739ccd088e
   languageName: node
   linkType: hard
 
@@ -12526,9 +12556,9 @@ typescript@^3.9.7:
   languageName: node
   linkType: hard
 
-"webpack@npm:4.44.0, webpack@npm:^4.43.0":
-  version: 4.44.0
-  resolution: "webpack@npm:4.44.0"
+"webpack@npm:^4.44.1":
+  version: 4.44.1
+  resolution: "webpack@npm:4.44.1"
   dependencies:
     "@webassemblyjs/ast": 1.9.0
     "@webassemblyjs/helper-module-context": 1.9.0
@@ -12553,9 +12583,17 @@ typescript@^3.9.7:
     terser-webpack-plugin: ^1.4.3
     watchpack: ^1.7.4
     webpack-sources: ^1.4.1
+  peerDependencies:
+    webpack-cli: "*"
+    webpack-command: "*"
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+    webpack-command:
+      optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 5b3fe7a329a2f096909f4334d74bdb2b91ee44a9d8caada1845713456eabf5f87d7af51e3bc50586e66236ec8747c0b4fed33a32443535242d65b0f10ea5d365
+  checksum: d4d140010bdf1fe4a5ef5435733e4b4fb71081cafd5e995adca0ca6259e271c7b51af909477e03bbbeb35487bd399a672bb0bc4a4726baebac059444b489b412
   languageName: node
   linkType: hard
 
@@ -12726,7 +12764,7 @@ typescript@^3.9.7:
   languageName: node
   linkType: hard
 
-"yaml@npm:^1.7.2":
+"yaml@npm:^1.10.0, yaml@npm:^1.7.2":
   version: 1.10.0
   resolution: "yaml@npm:1.10.0"
   checksum: d4cc9f9724f8d0aebc2cf52e4e6aa7059f12d50deb54b5225d103462fb2af36e5c0bb419101ca4b1f0cd3b4db9e4139cf2c690e863ac6227648d39d6f4e2522c
@@ -12743,7 +12781,7 @@ typescript@^3.9.7:
   languageName: node
   linkType: hard
 
-"yargs@npm:^15.3.1":
+"yargs@npm:^15.4.1":
   version: 15.4.1
   resolution: "yargs@npm:15.4.1"
   dependencies:
