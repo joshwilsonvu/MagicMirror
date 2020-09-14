@@ -5380,16 +5380,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"error-reporter@workspace:modules/error-reporter":
-  version: 0.0.0-use.local
-  resolution: "error-reporter@workspace:modules/error-reporter"
-  dependencies:
-    "@mm/core": latest
-    "@mm/node-helper": latest
-    react: "*"
-  languageName: unknown
-  linkType: soft
-
 "es-abstract@npm:^1.17.0, es-abstract@npm:^1.17.0-next.1, es-abstract@npm:^1.17.5":
   version: 1.17.5
   resolution: "es-abstract@npm:1.17.5"
@@ -10354,7 +10344,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"react@npm:*, react@npm:>=16.8, react@npm:^16.13.1":
+"react@npm:>=16.8, react@npm:^16.13.1":
   version: 16.13.1
   resolution: "react@npm:16.13.1"
   dependencies:

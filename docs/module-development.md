@@ -11,12 +11,13 @@ So you have an idea for a useful MagicMirror module. Great! To get
 started, run
 
 ```sh
-yarn mm init NewModule  # replace with the name of your module
+yarn mm new
 ```
 
-See `yarn mm init --help` for more details. Then open
-MagicMirror/modules/MMM-NewModule/index.js. You'll see the following
-content:
+You will be prompted to answer a few questions. See
+`yarn mm init --help` for more details. Then open
+MagicMirror/modules/MMM-NewModule/index.js. You'll see
+the following content:
 
 ```javascript
 import React, { useState } from "react";
@@ -60,5 +61,7 @@ export default function NewModule(props) {
 
 // See the docs for more information.
 ```
+
+
 
 ## Migrating from MagicMirror<sup>2</sup>

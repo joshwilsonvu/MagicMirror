@@ -18,11 +18,10 @@ const config: Config = {
   units: "metric",
   modules: [
     {
-      module: "text",
+      module: "helloworld",
       position: "top_left",
-      header: "Text",
       config: {
-        text: "hello bob",
+        text: "hello world",
       },
     },
     {
