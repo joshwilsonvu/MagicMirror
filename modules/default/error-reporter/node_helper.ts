@@ -1,4 +1,4 @@
-import NodeHelper from "@mm/node-helper";
+import NodeHelper from "magicmirror/node-helper";
 
 export default class ErrorReporter extends NodeHelper {
   onError(event) {

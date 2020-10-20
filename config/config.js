@@ -1,5 +1,3 @@
-import { Config } from "@mm/core";
-
 /* Magic Mirror Config Sample
  *
  * By Michael Teeuw http://michaelteeuw.nl
@@ -9,7 +7,7 @@ import { Config } from "@mm/core";
  * See https://github.com/MichMich/MagicMirror#configuration
  *
  */
-const config: Config = {
+const config = {
   address: "127.0.0.1",
   port: 8080,
   ipAllowlist: [],

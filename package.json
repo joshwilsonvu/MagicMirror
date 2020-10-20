@@ -1,8 +1,10 @@
 {
-  "name": "magicmirror",
+  "name": "mymirror",
   "version": "1.0.0",
   "description": "The open source modular smart mirror platform.",
-  "author": "Josh Wilson",
+  "authors": [
+    "Josh Wilson"
+  ],
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -12,11 +14,10 @@
   ],
   "scripts": {
     "start": "mm start",
-    "build": "mm build",
-    "serve": "mm serve",
     "view": "mm view",
-    "check": "mm check",
-    "mm-dev": "yarn link ../mm --all --relative && echo 'Now using @mm packages from ../mm. To undo, remove the packages from the \"resolutions\" field in this file.'"
+    "add": "mm add",
+    "new": "mm new",
+    "snowpack_install": "yarn snowpack install --verbose --polyfill-node"
   },
   "repository": {
     "type": "git",
@@ -32,24 +33,27 @@
   "homepage": "https://magicmirror.builders",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "@mm/cli": "*",
-    "@mm/core": "*",
-    "@mm/mm2": "*",
-    "@mm/node-helper": "*",
     "@types/node": "^14.0.6",
     "@types/react": "^16.9.35",
+    "magicmirror": "*",
+    "moment-timezone": "^0.5.31",
+    "nunjucks": "^3.2.2",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "roboto-fontface": "^0.10.0",
-    "typescript": "^3.9.3"
+    "snowpack": "^2.11.0",
+    "suncalc": "^1.8.0"
   },
   "resolutions": {
-    "@mm/babel-plugin-transform-config": "portal:../mm/packages/babel-plugin-transform-config",
-    "@mm/babel-plugin-transform-mm2": "portal:../mm/packages/babel-plugin-transform-mm2",
-    "@mm/cli": "portal:../mm/packages/cli",
-    "@mm/core": "portal:../mm/packages/core",
-    "@mm/mm2": "portal:../mm/packages/mm2",
-    "@mm/moduleslist": "portal:../mm/packages/moduleslist",
-    "@mm/node-helper": "portal:../mm/packages/node-helper"
+    "magicmirror": "portal:../mm"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0"
+  },
+  "dependenciesMeta": {
+    "snowpack@2.11.1": {
+      "unplugged": true
+    }
   }
 }

@@ -11,23 +11,20 @@ import "./main.css";
 // uncomment the next line if you want to use custom CSS
 /* import ../css/custom.css */
 
-// Create a DOM element for React to render into
-const root = document.createElement("div");
-document.body.appendChild(root);
+// Get the DOM element for React to render into
+const root = document.getElementById("root");
 
 // Render MagicMirror with React
-function render() {
-  ReactDOM.render(<MagicMirror initialConfig={config} />, root);
-}
-render();
+ReactDOM.render(<MagicMirror initialConfig={config} />, root);
 
-// When run with `mm start`, automatically updates the screen
-// when source files are changed. Certain changes will still
-// require you to quit and restart `mm start`.
-if (module.hot) {
-  module.hot.accept();
-  module.hot.accept(["./magic-mirror", "../config/config"], () => {
-    ReactDOM.unmountComponentAtNode(root);
-    render();
+// Automatically updates the screen when source files are changed.
+// Certain changes will still require you to quit and restart `mm start`.
+if (import.meta.hot) {
+  import.meta.hot.accept();
+  import.meta.hot.accept(['../config/config', './magic-mirror'], ({ deps }) => {
+    const config = deps[0].default;
+    const MagicMirror = deps[1].default;
+    ReactDOM.render(<MagicMirror initialConfig={config} />, root);
   });
+  import.meta.hot.dispose(() => ReactDOM.unmountComponentAtNode(root));
 }

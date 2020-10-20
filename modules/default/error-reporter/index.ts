@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { sendSocketNotification, Props } from "@mm/core";
+import { sendSocketNotification, Props } from "magicmirror";
 
 export default function ErrorReporter({ name }: Props) {
   useEffect(() => {

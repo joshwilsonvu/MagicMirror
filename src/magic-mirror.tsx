@@ -9,8 +9,8 @@ import {
   initializeConfigClient,
   ModuleLayout,
   ModuleGuard,
-} from "@mm/core";
-import { Config, InternalModuleConfig } from "@mm/core";
+} from "magicmirror";
+import type { Config, InternalModuleConfig } from "magicmirror";
 
 // Use like modifyConfig(hideModule(id, true))
 // const MM = {

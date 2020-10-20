@@ -27,7 +27,7 @@ import {
   useSocketNotification,
   sendSocketNotification,
   useFetchJson,
-} from "@mm/core";
+} from "magicmirror";
 
 // This object contains default values for the module configuration.
 const defaults = {

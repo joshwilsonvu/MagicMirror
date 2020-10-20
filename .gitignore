@@ -13,6 +13,7 @@ build
 dist
 node_modules
 jspm_modules
+web_modules
 .npm
 .node_repl_history
 

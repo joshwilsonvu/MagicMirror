@@ -1,8 +1,0 @@
-{
-  "name": "calendar",
-  "dependencies": {
-    "@mm/core": "latest",
-    "@mm/node-helper": "latest",
-    "valid-url": "^1.0.9"
-  }
-}

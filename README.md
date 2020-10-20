@@ -70,19 +70,16 @@ users directly, but they do make it easier for users to become contributors.
   `.js` files to `.tsx`, and any type errors will be detected. Opt out with `yarn mm start --fast`.
 
 _"Hang on, I don't see the code to do all of that in this repository!
-And what are `@mm/core`, `@mm/cli`, and the other `@mm` packages in
-`package.json`?"_
+And what's `import { something } from "magicmirror"`?
 
 The above features do require some complexity to implement, and they would
-clutter up this repository. So, the code is bundled up into packages
-that Yarn downloads, and your JavaScript `import`s. You can find them all in
+clutter up this repository. So, the code is bundled up into a package
+that Yarn downloads, and your JavaScript `import`s. You can find it in
 [the `mm` repository](https://github.com/joshwilsonvu/mm/tree/master/packages).
 
-`@mm/core` and `@mm/cli` are the only ones you should normally worry about.
-The core has React components, React hooks, and utilities that MagicMirror
-modules will use. The CLI is responsible for bundling up, serving, and
-running your mirror; run it with `yarn mm`. The other packages mostly
-relate to backwards compatibility. Documentation is coming soon.
+`magicmirror` has React components, React hooks, and utilities that MagicMirror
+modules will use. The `mm` CLI is responsible for bundling up, serving, and
+running your mirror; run it with `yarn mm`. Documentation is coming soon.
 
 ## Installation
 
