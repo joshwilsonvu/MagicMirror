@@ -16,8 +16,7 @@
     "start": "mm start",
     "view": "mm view",
     "add": "mm add",
-    "new": "mm new",
-    "snowpack_install": "yarn snowpack install --verbose --polyfill-node"
+    "new": "mm new"
   },
   "repository": {
     "type": "git",
@@ -35,6 +34,7 @@
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@types/node": "^14.0.6",
     "@types/react": "^16.9.35",
+    "eslint": "^7.11.0",
     "magicmirror": "*",
     "moment-timezone": "^0.5.31",
     "nunjucks": "^3.2.2",
@@ -42,19 +42,10 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "roboto-fontface": "^0.10.0",
-    "snowpack": "^2.15.1",
     "suncalc": "^1.8.0"
   },
   "resolutions": {
     "magicmirror": "portal:../mm",
-    "snowpack": "portal:/Users/Josh/web/snowpack/snowpack"
-  },
-  "devDependencies": {
-    "eslint": "^7.11.0"
-  },
-  "dependenciesMeta": {
-    "snowpack@2.11.1": {
-      "unplugged": true
-    }
+    "esinstall": "0.3.6"
   }
 }

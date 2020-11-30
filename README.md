@@ -19,7 +19,7 @@ make many powerful features possible.
   config file), the screen will instantly update. No need to stop
   and restart.
 
-- **Extra Performance:** MagicMirror modules automatically load faster.
+- **Better Performance:** MagicMirror modules automatically load faster.
 
 - **Better Reliability:** Modules run independently, so
   problems in one won't affect others.
@@ -63,14 +63,15 @@ users directly, but they do make it easier for users to become contributors.
   [Emotion](https://emotion.sh) are supported for flexibility of styling.
 
 * **Linting:** Your code is checked for potential problems, which improves
-  the quality of your code and reduces bugs. Opt out with `yarn mm start --fast`.
+  the quality of your code and reduces bugs.
 
-* **TypeScript:** TypeScript, a typed superset of JavaScript,
-  is supported. Like linting, TypeScript can help catch bugs. Change your
-  `.js` files to `.tsx`, and any type errors will be detected. Opt out with `yarn mm start --fast`.
+* **TypeScript:** TypeScript, a typed superset of JavaScript, is supported. 
+  Like linting, TypeScript can help catch bugs. MagicMirror doesn't run type
+  checking directly, but a code editor like [Visual Studio Code](https://code.visualstudio.com)
+  will run type checking in the background and can even catch problems in JavaScript.
 
 _"Hang on, I don't see the code to do all of that in this repository!
-And what's `import { something } from "magicmirror"`?
+And what's `import { ... } from "magicmirror"`?
 
 The above features do require some complexity to implement, and they would
 clutter up this repository. So, the code is bundled up into a package
@@ -106,7 +107,7 @@ yarn --version
 This should display something like `v12.0.0` and `1.22.0`.
 
 Download MagicMirror into the current directory by running the following.
-Make sure to use `yarn` instead of `npm`. It may take several minutes.
+Make sure to use `yarn` instead of `npm`. They may take several minutes.
 
 ```sh
 git clone --depth=1 https://github.com/joshwilsonvu/MagicMirror.git MagicMirror

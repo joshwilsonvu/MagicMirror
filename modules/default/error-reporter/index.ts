@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { sendSocketNotification, Props } from "magicmirror";
+import { sendSocketNotification, MagicMirrorModule } from "magicmirror";
 
-export default function ErrorReporter({ name }: Props) {
+const ErrorReporter: ({ name }: Props) {
   useEffect(() => {
     function reporter(event: ErrorEvent) {
       const payload = {
@@ -18,3 +18,5 @@ export default function ErrorReporter({ name }: Props) {
   }, [name]);
   return null;
 }
+
+export default ErrorReporter;

@@ -10,7 +10,7 @@ import {
   ModuleLayout,
   ModuleGuard,
 } from "magicmirror";
-import type { Config, InternalModuleConfig } from "magicmirror";
+import type { Config, ClientModuleConfig } from "./types";
 
 // Use like modifyConfig(hideModule(id, true))
 // const MM = {
@@ -33,7 +33,7 @@ import type { Config, InternalModuleConfig } from "magicmirror";
 function MagicMirrorModule({
   _component: Component,
   ...props
-}: InternalModuleConfig) {
+}: ClientModuleConfig) {
   return props.disabled ? null : (
     <ModuleGuard name={Component.name}>
       <div

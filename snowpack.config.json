@@ -3,6 +3,7 @@
   "mount": {
     "public": "/",
     "src": "/src",
-    "config": "/config"
+    "config": "/config",
+    "modules": "/modules"
   }
 }

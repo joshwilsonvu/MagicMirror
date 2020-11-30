@@ -9,7 +9,7 @@ import 'roboto-fontface/css/roboto-condensed/roboto-condensed-fontface.css';
 import './main.css';
 
 // uncomment the next line if you want to use custom CSS
-/* import ../css/custom.css */
+// import ../css/custom.css
 
 // Get the DOM element for React to render into
 const root = document.getElementById('root');
@@ -18,8 +18,7 @@ const root = document.getElementById('root');
 ReactDOM.render(<MagicMirror initialConfig={config} />, root);
 
 // Automatically updates the screen when source files are changed.
-// Certain changes will still require you to quit and restart `mm start`.
-// #region hot reloading
+// Certain changes may still require you to quit and restart `mm start`.
 if (import.meta.hot) {
   import.meta.hot.accept();
   import.meta.hot.accept(['../config/config', './magic-mirror'], ({ deps }) => {
@@ -29,4 +28,3 @@ if (import.meta.hot) {
   });
   import.meta.hot.dispose(() => ReactDOM.unmountComponentAtNode(root));
 }
-// #endregion
